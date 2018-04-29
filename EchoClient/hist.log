@@ -1,0 +1,132 @@
+    1  poweroff 
+    2  df
+    3  cd /etc/yum.repos.d/
+    4  ls
+    5  cat CentOS-Media.repo 
+    6  c
+    7  yum --disablerepo=* --enablerepo=c6-media install gcc make bzip2 kernel-devel
+    8  cat CentOS-Media.repo 
+    9  mount /dev/cdrom /media/cdrom
+   10  mkdir /media/cdrom
+   11  mount /dev/cdrom /media/cdrom
+   12  yum --disablerepo=* --enablerepo=c6-media install gcc make bzip2 kernel-devel
+   13  umount /dev/cdrom
+   14  df
+   15  mount /dev/cdrom /media/cdrom/
+   16  cd /media/cdrom/
+   17  ./VBoxLinuxAdditions.run 
+   18  yum --disablerepo=* --enablerepo=c6-media install gcc
+   19  yum --disablerepo=* --enablerepo=c6-media install make
+   20  yum --disablerepo=* --enablerepo=c6-media install perl
+   21  ./VBoxLinuxAdditions.run 
+   22  gcc
+   23  mkae
+   24  make
+   25  perl
+   26  umount /dev/cdrom
+   27  cd
+   28  umount /dev/cdrom
+   29  mount /dev/cdrom /media/cdrom/
+   30  yum --disablerepo=* --enablerepo=c6-media install perl
+   31  ls /media/cdrom/
+   32  umount /dev/cdrom
+   33  yum -y install perl
+   34  df
+   35  mount /dev/cdrom /media/cdrom/
+   36  cd /media/cdrom/
+   37  ls
+   38  ./VBoxLinuxAdditions.run 
+   39  reboot
+   40  poweroff 
+   41  ls /media/sf_Linux_share/
+   42  shutdown -h now
+   43  ifconfig eth0
+   44  yum search jdk
+   45  yum -y install java-1.8.0-openjdk-devel
+   46  ls /media/
+   47  mount /dev/cdrom /media/cdrom/
+   48  yum disablerepo=* enablerepo=c6-media search java
+   49  man yum
+   50  yum disablerepos=* enablerepos=c6-media search java
+   51  /usr/bin/yum --help
+   52  /usr/bin/yum --help | less
+   53  yum --disablerepo=* --enablerepo=c6-media search java
+   54  yum --disablerepo=* --enablerepo=c6-media search jdk
+   55  yum --disablerepo=* --enablerepo=c6-media search jdk| less
+   56  java -v
+   57  javac -v
+   58  javac -version
+   59  yum -y install gradle
+   60  mkdir /opt/gradle
+   61  unzip -d /opt/gradle /media/sf_Linux_share/gradle-4.7-bin.zip 
+   62  yum -y install unzip
+   63  unzip -d /opt/gradle /media/sf_Linux_share/gradle-4.7-bin.zip 
+   64  cd
+   65  ls -a
+   66  cd
+   67  vi .bash_profile 
+   68  . 
+   69  source .bash_profile 
+   70  gradle -v
+   71  ls
+   72  mkdir java-demo
+   73  cd java-demo/
+   74  gradle init --type java-application
+   75  ./gradlew build
+   76  ./gradlewwww tasks
+   77  ./gradlew tasksk
+   78  ./gradlew tasks
+   79  ./gradlew run
+   80  ls
+   81  which gradlew
+   82  locate gradlew
+   83  cat gradlew.bat 
+   84  ifconfig eth0
+   85  ls
+   86  rm /media/sf_Linux_share/gradle-4.7-bin.zip 
+   87  poweroff 
+   88  exit
+   89  fg
+   90  exit
+   91  ./gradlew run -Pargs="localhost 10000"
+   92  exit
+   93  ./gradlew run -Pargs="localhost 10000"
+   94  ./gradlew build
+   95  ./gradlew run -Pargs="localhost 10000"
+   96  ./gradlew build
+   97  ./gradlew build > erro.log
+   98  ./gradlew build
+   99  ./gradlew run -Pargs="localhost 10000"
+  100  yum -y install xinetd
+  101  cat /etc/redhat-release 
+  102  vim /etc/xinetd.d/echo-stream 
+  103  service xinetd start
+  104  lsof -i 
+  105  netstat \ant
+  106  netstat -ant
+  107  yum -y install ncat
+  108  yum -y install nc
+  109  nc localhost 7
+  110  ./gradlew run -Pargs="localhost 7"
+  111  ./gradlew run -Pargs="localhost 8"
+  112  ./gradlew run -Pargs="localhost 7"
+  113  yum -y install tree
+  114  tree
+  115  ls
+  116  cd build
+  117  ls
+  118  cd classes/
+  119  ls
+  120  cd java/
+  121  ls
+  122  cd main
+  123  ls
+  124  java EchoClient localhost 7
+  125  history 
+  126  cd 
+  127  cd java
+  128  ls
+  129  cd EchoClient/
+  130  ls
+  131  rm erro.log 
+  132  history > hist.log
