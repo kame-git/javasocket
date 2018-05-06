@@ -18,7 +18,7 @@ public class EchoClient1 {
         String hostName = args[0];
         int portNumber = Integer.parseInt(args[1]);
 
-	try (
+		try (
             /* ソケットの生成 */
             Socket echoSocket = new Socket(hostName, portNumber);
 
@@ -45,13 +45,13 @@ public class EchoClient1 {
                 /* System.out.println("echo: " + in.readLine()); */
                 System.out.println("echo: " + sockIn.next());
             }
-	} catch(UnknownHostException e) {
-            System.err.println("Don't know about host " + hostName);
-            System.exit(1);
-        } catch(IOException e) {
-            System.err.println("Couldn't get I/O for the connection to " + hostName);
-            System.exit(1);
-	}
+		} catch(UnknownHostException e) {
+	            System.err.println("Don't know about host " + hostName);
+	            System.exit(1);
+	    } catch(IOException e) {
+	            System.err.println("Couldn't get I/O for the connection to " + hostName);
+	            System.exit(1);
+		}
     }
 }
 

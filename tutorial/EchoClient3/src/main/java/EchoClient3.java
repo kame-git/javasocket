@@ -26,7 +26,7 @@ public class EchoClient3 {
             System.exit(1);
         }
 
-	try (
+		try (
             /* ソケットの生成 */
             Socket echoSocket = new Socket(hostName, portNumber);
 
@@ -49,15 +49,15 @@ public class EchoClient3 {
                 Thread.sleep(1000);
             }
 
-	} catch(UnknownHostException e) {
-            System.err.println("Don't know about host " + hostName);
-            System.exit(1);
-        } catch(IOException e) {
-            System.err.println("Couldn't get I/O for the connection to " + hostName);
-            System.exit(1);
-	} catch (InterruptedException e) {
-            System.err.println("割込みが発生しました");
-            System.exit(1);
+		} catch(UnknownHostException e) {
+	            System.err.println("Don't know about host " + hostName);
+	            System.exit(1);
+	        } catch(IOException e) {
+	            System.err.println("Couldn't get I/O for the connection to " + hostName);
+	            System.exit(1);
+		} catch (InterruptedException e) {
+	            System.err.println("割込みが発生しました");
+	            System.exit(1);
         }
     }
 }
