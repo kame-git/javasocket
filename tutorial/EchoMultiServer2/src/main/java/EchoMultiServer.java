@@ -15,7 +15,7 @@ public class EchoMultiServer {
 
         int maxThread = 3;
         Thread[] th = new Thread[maxThread];
-        Arrays.fill(th, null);
+        //Arrays.fill(th, null);
     
         try (
             ServerSocket serverSocket =
