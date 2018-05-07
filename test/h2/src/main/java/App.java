@@ -14,6 +14,19 @@ public class App {
         System.out.println(new App().getGreeting());
 
         Class.forName("org.h2.Driver");
-        Connection con = DriverManager.getConnection("jdbc:h2:~/test","","");
+        try (
+            Connection con = DriverManager.getConnection("jdbc:h2:~/test","","");
+        ) {
+           PreparedStatement pstmt = 
+               con.prepareStatement("SELECT * FROM Staff");
+           ResultSet rs = pstmt.executeQuery();
+
+           while (rs.next()) {
+               System.out.println(rs.getInt("staff_code"));
+               System.out.println(rs.getString("staff_name"));
+               System.out.println(rs.getInt("work_year"));
+               System.out.println(rs.getInt("wages"));
+           }
+        }
     }
 }
