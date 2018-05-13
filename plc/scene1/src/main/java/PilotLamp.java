@@ -2,8 +2,12 @@ public class PilotLamp {
 
     String terminal;
     String name;
-    private int status;
 
+    enum State {
+        OFF, ON
+    };
+    private State state = State.OFF;
+    
     public void setTerminal(String t) {
         this.terminal = t;
     }
@@ -13,22 +17,22 @@ public class PilotLamp {
     }
 
     public boolean turnOn() {
-        return false;
+        state = state.ON;
+        return true;
     }
 
     public boolean turnOff() {
-        return false;
+        state = state.OFF;
+        return true;
     }
 
     public String getStatusString() {
         String message = null;
 
-        if (status == 0)
+        if (state == state.OFF)
             message = name + "は消灯中です。";
-        else if (status == 1)
+        else if (state == state.ON)
             message = name + "は点灯中です。";
-        else if (status == -1)
-            message = name + "の情報を取得できません。";
 
         return message;
     }

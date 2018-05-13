@@ -1,9 +1,10 @@
 public class PushButton {
 
-    String terminal;
-    String name;
-    PilotLamp target;
-
+    private String terminal;
+    private String name;
+    private PilotLamp target;
+    private ButtonRole role;
+    
     public void setTerminal(String t) {
         this.terminal = t;
     }
@@ -12,7 +13,7 @@ public class PushButton {
         this.name = n;
     }
 
-    public boolean setTaret(Object o) {
+    public boolean setTarget(Object o) {
         if (o == null) {
             return false;
         } else if (!(o instanceof PilotLamp)) {
@@ -23,8 +24,25 @@ public class PushButton {
         return true;
     }
 
+    public void setRole(ButtonRole r) {
+        this.role = r;
+    }
+
     public boolean press() {
-        return true;
+        if (role == ButtonRole.OFF) {
+            if (target.turnOff()) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (role == ButtonRole.ON) {
+            if (target.turnOn()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 
 

@@ -1,0 +1,3 @@
+enum ButtonRole {
+    ON, OFF
+}

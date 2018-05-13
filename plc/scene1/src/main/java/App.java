@@ -15,8 +15,14 @@ public class App {
 
         startButton.setTerminal("X0");
         startButton.setName("起動ボタン");
+        startButton.setRole(ButtonRole.ON);
+        startButton.setTarget(startLamp);
+
         stopButton.setTerminal("X1");
         stopButton.setName("停止ボタン");
+        stopButton.setRole(ButtonRole.OFF);
+        stopButton.setTarget(startLamp);
+        
         startLamp.setTerminal("Y0");
         startLamp.setName("起動ランプ");
 
@@ -33,32 +39,5 @@ public class App {
         }
 
         System.out.println(startLamp.getStatusString());
-
-        /*
-        PilotLampStatus startLampStatus= startLamp.getStatus(); 
-        if (startLampStatus == PilotLampStatus.ERROR) {
-            System.out.println("起動ランプの状態取得に失敗しました。");
-            System.exit(1);
-        } else if (startLampStatus == PilotLampStaus.ON) {
-            System.out.println("起動ランプは点灯しています。");
-        } else if (startLampStatus == PilotLampStaus.OFF) {
-            System.out.println("起動ランプは消灯しています。");
-        }
-
-        if (!stopButton.press()) {
-            System.out.println("停止に失敗しました。");
-            System.exit(1);
-        }
-
-        PilotLampStatus startLampStatus= startLamp.getStatus(); 
-        if (startLampStatus == PilotLampStatus.ERROR) {
-            System.out.println("起動ランプの状態取得に失敗しました。");
-            System.exit(1);
-        } else if (startLampStatus == PilotLampStaus.ON) {
-            System.out.println("起動ランプは点灯しています。");
-        } else if (startLampStatus == PilotLampStaus.OFF) {
-            System.out.println("起動ランプは消灯しています。");
-        }
-        */
     }
 }
